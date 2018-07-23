@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 @Entity 
 public class Categoria implements Serializable {
 	
@@ -22,7 +20,7 @@ public class Categoria implements Serializable {
 	private Integer id;
 	private String nome;
 	
-	@JsonManagedReference //Essa anotação é do pacote jackson e ele te mostra os objetos associados a essa lista
+	//@JsonManagedReference //Essa anotação é do pacote jackson e ele te mostra os objetos associados a essa lista
 	@ManyToMany(mappedBy="categorias")
 	private List<Produto> produtos = new ArrayList<>(); 
 	
